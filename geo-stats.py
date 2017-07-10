@@ -2,7 +2,6 @@ import sendgrid
 import json
 import os
 import ssl
-import json
 
 ssl._create_default_https_context = ssl._create_unverified_context
 API_KEY = 'SENDGRID_API_KEY'
