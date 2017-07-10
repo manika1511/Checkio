@@ -1,14 +1,18 @@
 import sendgrid
 from sendgrid.helpers.mail import Email, Mail, Content
+import ssl
+import os
+
+ssl._create_default_https_context = ssl._create_unverified_context
 
 API_KEY = 'SENDGRID_API_KEY'
 SUBJECT = 'Welcome'
 BODY = 'Hi {}'
 
-sg = sendgrid.SendGridAPIClient(apikey=API_KEY)
+sg = sendgrid.SendGridAPIClient(apikey=os.environ.get(API_KEY))
 
 def send_email(email, name):
-    from_email = Email("manika.kapoor90@gmail.com")
+    from_email = Email('from email')
     to_email = Email(email)
     subject = SUBJECT
     content = Content("text/plain", "Hi " + name)
