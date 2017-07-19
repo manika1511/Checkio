@@ -5,7 +5,7 @@ def check_v(matrix, i, j):
             return True
     except IndexError:
         return False
-​
+
 def check_h(matrix, i, j):
     try:
         if (matrix[i][j] == matrix[i][j+1]) and (matrix[i][j] == matrix[i][j+2]) and \
@@ -13,7 +13,7 @@ def check_h(matrix, i, j):
             return True
     except IndexError:
         return False
-​
+
 def check_dd(matrix, i, j):
     try:
         if (matrix[i][j] == matrix[i-1][j-1]) and (matrix[i][j] == matrix[i-2][j-2]) and \
@@ -23,7 +23,7 @@ def check_dd(matrix, i, j):
             return True
     except IndexError:
         return False
-​
+
 def check_du(matrix, i, j):
     try:
         if (matrix[i][j] == matrix[i-1][j+1]) and (matrix[i][j] == matrix[i-2][j+2]) and \
@@ -33,8 +33,7 @@ def check_du(matrix, i, j):
             return True
     except IndexError:
         return False
-​
-​
+
 def checkio(matrix):
     for i in range(len(matrix)):
         for j in range(len(matrix[i])):
